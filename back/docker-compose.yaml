@@ -1,0 +1,21 @@
+version: '2.1'
+services:
+   notesapp-project:
+      container_name: noteapp-backend
+      image: noteapp-backend
+
+      ports:
+         - 5000:5000
+      depends_on:
+         - database
+
+   database:
+      container_name: notesapp-db
+      image: postgres:alpine
+      ports:
+         - 5431:5432
+      environment:
+         - POSTGRES_USER=postgres
+         - POSTGRES_PASSWORD=pass
+         - POSTGRES_DB=notesapp-db
+

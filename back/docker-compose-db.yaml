@@ -1,0 +1,11 @@
+version: '2.1'
+services:
+   database:
+      container_name: notesapp-db
+      image: postgres:alpine
+      ports:
+         - 127.0.0.1:5431:5432
+      environment:
+         - POSTGRES_USER=postgres
+         - POSTGRES_PASSWORD=pass
+         - POSTGRES_DB=notesapp-db
